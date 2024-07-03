@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Add Blog</title>
+        <style>
+            body {
+                background-color: #121212;
+                color: #ffffff;
+            }
+
+            .card {
+                background-color: #1f1f1f;
+                border: none;
+            }
+
+            .form-label {
+                color: #ffffff;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+            .btn-close {
+                filter: invert(1);
+            }
+
+            .card-header {
+                color: #007bff;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Add New Blog</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="/blog" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="title" name="title" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Content <span
+                                            class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="content" name="content" rows="8"
+                                        required></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="coverImage" class="form-label">Cover Image <span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" id="coverImage" name="coverImage" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Blog</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/scripts') %>
+</body>
+
+</html>
